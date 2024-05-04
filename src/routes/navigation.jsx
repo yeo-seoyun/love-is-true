@@ -1,6 +1,12 @@
 import About from "../pages/About";
 import Home from "../pages/Home";
+import Acc from "../pages/Shop/Acc";
+import Best from "../pages/Shop/Best";
+import Bottom from "../pages/Shop/Bottom";
+import Ops from "../pages/Shop/Ops";
+import Outer from "../pages/Shop/Outer";
 import Shop from "../pages/Shop/Shop";
+import Top from "../pages/Shop/Top";
 
 const navigationItems = [
   {
@@ -20,14 +26,16 @@ const navigationItems = [
   {
     id: "shop",
     path: "/shop",
-    index: true,
     text: "샵",
     element: <Shop />,
-    // children: [
-    //   { index: true, element: < /> },
-    //   { path: "ceomessage", element: < /> },
-    //   { path: "careers", element: < /> },
-    // ],
+    children: [
+      { index: true, element: <Best /> },
+      { path: "outer", element: <Outer /> },
+      { path: "top", element: <Top /> },
+      { path: "ops", element: <Ops /> },
+      { path: "bottom", element: <Bottom /> },
+      { path: "acc", element: <Acc /> },
+    ],
   },
 ];
 

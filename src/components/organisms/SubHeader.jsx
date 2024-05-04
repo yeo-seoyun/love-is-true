@@ -6,18 +6,14 @@ function SubHeader() {
   const [title, setTitle] = useState("");
 
   useEffect(() => {
-    switch (location.pathname) {
-      case "/shop":
-        setTitle("SHOP");
-        break;
-      case "/about":
-        setTitle("ABOUT");
-        break;
-      case "/lookbook":
-        setTitle("LOOKBOOK");
-        break;
-      default:
-        setTitle("HOME");
+    if (location.pathname.startsWith("/shop")) {
+      setTitle("SHOP");
+    } else if (location.pathname.startsWith("/about")) {
+      setTitle("ABOUT");
+    } else if (location.pathname.startsWith("/lookbook")) {
+      setTitle("LOOKBOOK");
+    } else {
+      setTitle("HOME");
     }
   }, [location]);
 
