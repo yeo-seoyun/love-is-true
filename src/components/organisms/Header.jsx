@@ -25,7 +25,7 @@ function Header() {
             Shop
           </Link>
           <Link
-            to="/"
+            to="/lookbook"
             className="hover:text-black hover:line-through transition-all"
           >
             LookBook

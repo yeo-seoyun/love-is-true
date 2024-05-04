@@ -11,6 +11,7 @@
 
 :root {
   font-family: Pretendard-Regular, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth
 }
 
 @layer components {

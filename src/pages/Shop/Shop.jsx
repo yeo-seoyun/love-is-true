@@ -20,7 +20,7 @@ function Shop() {
           ]}
         />
       </section>
-      <article className="pt-10">
+      <article className="bg-pink-100 mx-48 m-auto">
         <Outlet />
       </article>
     </>

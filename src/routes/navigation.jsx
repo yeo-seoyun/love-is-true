@@ -1,5 +1,6 @@
 import About from "../pages/About";
 import Home from "../pages/Home";
+import Lookbook from "../pages/Lookbook/LookBook";
 import Acc from "../pages/Shop/Acc";
 import Best from "../pages/Shop/Best";
 import Bottom from "../pages/Shop/Bottom";
@@ -36,6 +37,13 @@ const navigationItems = [
       { path: "bottom", element: <Bottom /> },
       { path: "acc", element: <Acc /> },
     ],
+  },
+  {
+    id: "lookbook",
+    path: "/lookbook",
+    index: true,
+    text: "룩북",
+    element: <Lookbook />,
   },
 ];
 
