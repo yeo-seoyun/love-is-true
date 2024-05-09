@@ -20,7 +20,7 @@ function Shop() {
           ]}
         />
       </section>
-      <article className="bg-pink-100 mx-48 m-auto">
+      <article className="mx-48 m-auto py-28">
         <Outlet />
       </article>
     </>

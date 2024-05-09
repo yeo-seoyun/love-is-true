@@ -32,7 +32,7 @@ function Best() {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-3 gap-7">
         {visibleProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

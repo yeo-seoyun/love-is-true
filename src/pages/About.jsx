@@ -3,7 +3,7 @@ import logo from "../assets/about.jpg";
 function About() {
   return (
     <>
-      <section className="max-w-[1440px] h-full m-auto">
+      <section className="max-w-[1440px] h-full m-auto pb-28">
         <div>
           <img src={logo} alt="러브이즈트루" className="w-full" />
         </div>
