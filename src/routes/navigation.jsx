@@ -6,6 +6,7 @@ import Best from "../pages/Shop/Best";
 import Bottom from "../pages/Shop/Bottom";
 import Ops from "../pages/Shop/Ops";
 import Outer from "../pages/Shop/Outer";
+import ProductDetail from "../pages/Shop/ProductDetail";
 import Shop from "../pages/Shop/Shop";
 import Top from "../pages/Shop/Top";
 
@@ -36,6 +37,7 @@ const navigationItems = [
       { path: "ops", element: <Ops /> },
       { path: "bottom", element: <Bottom /> },
       { path: "acc", element: <Acc /> },
+      { path: "detail/:productId", element: <ProductDetail /> },
     ],
   },
   {
