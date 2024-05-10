@@ -4,7 +4,7 @@ import logo from "/assets/logo.png";
 function Header() {
   return (
     <>
-      <header className="fixed top-0 px-12 py-6">
+      <header className="fixed top-0 px-12 py-6 z-50">
         <Link to="/">
           <img src={logo} alt="러브이즈트루" className="w-32" />
         </Link>

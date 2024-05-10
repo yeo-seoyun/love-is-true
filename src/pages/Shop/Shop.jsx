@@ -21,7 +21,7 @@ function Shop() {
           />
         )}
       </section>
-      <article className="max-w-[1440px] m-auto py-28">
+      <article className="max-w-[70%] m-auto pb-28">
         <Outlet />
       </article>
     </>
