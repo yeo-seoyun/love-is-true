@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import pb from "../../api/pocketbase";
 import { getPbImage } from "../../utills/getPbImage";
 import LoadingSpinner from "../../components/Loading";
@@ -78,7 +78,7 @@ function ProductDetail() {
               <select
                 name="size"
                 id="size"
-                className="bg-gray-100 px-1 py-3"
+                className="bg-gray-300 px-1 py-3"
                 value={selectedSize}
                 onChange={handleSizeChange}
               >
@@ -102,7 +102,7 @@ function ProductDetail() {
                   <div className="w-1/2 flex">
                     <button
                       onClick={decrementQuantity}
-                      className="px-2 py-1 bg-gray-200"
+                      className="px-2 py-1 bg-gray-300"
                     >
                       -
                     </button>
@@ -116,7 +116,7 @@ function ProductDetail() {
                     />
                     <button
                       onClick={incrementQuantity}
-                      className="px-2 py-1 bg-gray-200"
+                      className="px-2 py-1 bg-gray-300"
                     >
                       +
                     </button>
@@ -131,11 +131,48 @@ function ProductDetail() {
                 </div>
               </>
             )}
-            <div className="bg-purple-100">장바구니 구매하기</div>
+            <div className="flex flex-col gap-8">
+              <div className="flex items-center justify-between pb-1 border-b border-black-100">
+                <Link to="/" className="hover:text-gray-100">
+                  BUY NOW
+                </Link>
+                <Link to="/" className="hover:text-gray-100">
+                  ADD TO CART
+                </Link>
+                <Link to="/" className="hover:text-gray-100">
+                  WISH LIST
+                </Link>
+              </div>
+              <div className="font-Nanum flex items-center justify-between gap-1">
+                <p className="text-[10px]  flex flex-col">
+                  <span className="font-bold text-green-100 text-xs -mb-1">
+                    NAVER
+                  </span>
+                  <span className="-mb-2">네이버ID로 간편구매</span>
+                  <span>네이버페이</span>
+                </p>
+                <Link
+                  to=""
+                  className="w-[127px] h-[37px] bg-naver bg-contain bg-no-repeat bg-center bg-green-100 rounded-sm border"
+                  aria-label="네이버페이 구매"
+                ></Link>
+                <Link
+                  to=""
+                  className="w-[37px] h-[37px] border p-2 text-center"
+                >
+                  찜
+                </Link>
+              </div>
+            </div>
           </div>
         </article>
       </section>
-      <section>dd</section>
+      <section className="bg-pink-100 w-full h-auto flex flex-col items-center justify-center">
+        <h2>REVIEW</h2>
+      </section>
+      <section className="bg-pink-100 w-full h-auto flex flex-col items-center justify-center">
+        <h2>Q&A</h2>
+      </section>
     </>
   );
 }

@@ -8,19 +8,28 @@ export default {
       lg: { min: "1080px" },
     },
     extend: {
-      black: {
-        100: "#1E1E1E",
-        200: "#231F20",
-      },
-      gray: {
-        100: "#8D8D8D",
-        200: "#EEEEEE",
-        300: "#F8F8F8",
+      colors: {
+        black: {
+          100: "#1E1E1E",
+          200: "#231F20",
+        },
+        gray: {
+          100: "#8D8D8D",
+          200: "#EEEEEE",
+          300: "#F8F8F8",
+        },
+        green: {
+          100: "#00C851",
+        },
       },
       backgroundImage: {
         "home-1": "url('/assets/24aadcf80919fcb597f4698cc96a22cc.jpg')",
         "home-2": "url('/assets/2eb565a3af36071e481771430e71f00e.jpg')",
+        naver: "url('/assets/npay_sp_payment.png')",
       },
+    },
+    fontFamily: {
+      Nanum: ["NanumSquareNeo-Variable"],
     },
   },
   plugins: [],
