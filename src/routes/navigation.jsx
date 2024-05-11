@@ -1,5 +1,7 @@
 import About from "../pages/About";
 import Home from "../pages/Home";
+import Join from "../pages/Join";
+import Login from "../pages/Login";
 import Lookbook from "../pages/Lookbook/LookBook";
 import Acc from "../pages/Shop/Acc";
 import Best from "../pages/Shop/Best";
@@ -11,6 +13,20 @@ import Shop from "../pages/Shop/Shop";
 import Top from "../pages/Shop/Top";
 
 const navigationItems = [
+  {
+    id: "login",
+    path: "/login",
+    index: true,
+    text: "로그인",
+    element: <Login />,
+  },
+  {
+    id: "join",
+    path: "/join",
+    index: true,
+    text: "회원가입",
+    element: <Join />,
+  },
   {
     id: "home",
     path: "/",

@@ -39,7 +39,7 @@ function Header() {
             Community
           </Link>
           <Link
-            to="/"
+            to="/login"
             className="hover:text-black hover:line-through transition-all"
           >
             Login

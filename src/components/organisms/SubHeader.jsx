@@ -12,6 +12,10 @@ function SubHeader() {
       setTitle("ABOUT");
     } else if (location.pathname.startsWith("/lookbook")) {
       setTitle("LOOKBOOK");
+    } else if (location.pathname.startsWith("/login")) {
+      setTitle("LOGIN");
+    } else if (location.pathname.startsWith("/join")) {
+      setTitle("JOIN");
     } else {
       setTitle("HOME");
     }

@@ -3,10 +3,9 @@ import logo from "../assets/about.jpg";
 function About() {
   return (
     <>
-      <section className="max-w-[1440px] h-full m-auto pb-28">
-        <div>
-          <img src={logo} alt="러브이즈트루" className="w-full" />
-        </div>
+      <section className="max-w-[90%] h-full m-auto pb-28">
+        <img src={logo} alt="러브이즈트루" className="w-full" />
+
         <div className="flex flex-col items-center text-center gap-10 text-sm">
           <p>
             러브이즈트루는 심플, 미니멀, 컬러감이 있는 것들에서 영감을 받으며,
