@@ -5,6 +5,7 @@ import ScrollToTop from "../components/ScrollToTop.jsx";
 import Header from "../components/organisms/Header.jsx";
 import Footer from "../components/organisms/Footer.jsx";
 import SubHeader from "../components/organisms/SubHeader.jsx";
+import GoToTop from "../components/GoToTop.jsx";
 
 function Layout() {
   const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ function Layout() {
           <main>
             <Outlet />
           </main>
+          <GoToTop />
           <Footer />
         </div>
       </Provider>
