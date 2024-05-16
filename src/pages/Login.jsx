@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 function Login() {
   const [memberId, setMemberId] = useState("");
 
-  // 입력값이 변경될 때 호출될 함수입니다.
   const handleMemberIdChange = (event) => {
-    setMemberId(event.target.value); // 상태를 업데이트합니다.
+    setMemberId(event.target.value);
   };
   return (
     <>
