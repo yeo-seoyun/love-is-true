@@ -1,25 +1,45 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import InputField from "../components/atoms/InputField";
+import PhoneNumberInput from "../components/atoms/PhoneNumberInput";
+import CheckboxField from "../components/atoms/CheckboxField";
+import TextareaField from "../components/atoms/TextateaField";
 
 function Join() {
-  const [phoneNumber, setPhoneNumber] = useState({
-    areaCode: "010",
-    part1: "",
-    part2: "",
+  const [formData, setFormData] = useState({
+    userId: "",
+    password: "",
+    confirmPassword: "",
+    name: "",
+    email: "",
+    phoneNumber: { areaCode: "010", part1: "", part2: "" },
+    smsConsent: false,
+    emailConsent: false,
+    termsAccepted: false,
+    privacyAccepted: false,
   });
-  const [smsConsent, setSmsConsent] = useState(false);
-  const [email, setEmail] = useState("");
-  const [emailConsent, setEmailConsent] = useState(false);
 
-  const [termsAccepted, setTermsAccepted] = useState(false);
-  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (name in formData.phoneNumber) {
+      setFormData((prev) => ({
+        ...prev,
+        phoneNumber: { ...prev.phoneNumber, [name]: value },
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: type === "checkbox" ? checked : value,
+      }));
+    }
+  };
 
-  const handlePhoneChange = (e) => {
-    const { name, value } = e.target;
-    setPhoneNumber({
-      ...phoneNumber,
-      [name]: value,
-    });
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: checked,
+    }));
   };
 
   return (
@@ -28,118 +48,73 @@ function Join() {
         <h2 className="sr-only">회원가입</h2>
         <form className="w-[800px] flex flex-col gap-4">
           <div className="w-full flex flex-col gap-4">
-            <div className="w-full flex items-center gap-2">
-              <label className="w-28">아이디</label>
-              <input type="text" className="border p-2" />
-              <span className="text-xs">(영문소문자/숫자, 4~16자)</span>
-            </div>
-            <div className="w-full flex items-center gap-2 text-sm">
-              <label className="w-28">비밀번호</label>
-              <input type="password" className="border p-2" />
-              <span className="text-xs">
-                (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)
-              </span>
-            </div>
-            <div className="w-full flex items-center gap-2 text-sm">
-              <label className="w-28">비밀번호 확인</label>
-              <input type="password" className="border p-2" />
-            </div>
-            <div className="w-full flex items-center gap-2 text-sm">
-              <label className="w-28">이름</label>
-              <input type="text" className="border p-2" />
-            </div>
-            <div className="w-full flex items-center gap-2 text-sm">
-              <label className="w-28">이메일</label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="border p-2"
-                placeholder="example@example.com"
-              />
-            </div>
+            <InputField
+              label="아이디"
+              type="text"
+              name="userId"
+              value={formData.userId}
+              onChange={handleChange}
+              info="(영문소문자/숫자, 4~16자)"
+            />
+            <InputField
+              label="비밀번호"
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              info="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)"
+            />
+            <InputField
+              label="비밀번호 확인"
+              type="password"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+            />
+            <InputField
+              label="이름"
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <InputField
+              label="이메일"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="example@example.com"
+            />
 
-            <div className="w-full flex items-center gap-2 text-sm">
-              <label className="w-28">휴대전화</label>
-              <div className="flex space-x-2">
-                <select
-                  name="areaCode"
-                  value={phoneNumber.areaCode}
-                  onChange={handlePhoneChange}
-                  className="border p-2 flex-grow"
-                >
-                  <option value="010">010</option>
-                  <option value="011">011</option>
-                  <option value="016">016</option>
-                  <option value="017">017</option>
-                  <option value="018">018</option>
-                  <option value="019">019</option>
-                </select>
-                <input
-                  type="text"
-                  name="part1"
-                  value={phoneNumber.part1}
-                  onChange={handlePhoneChange}
-                  className="border p-2 flex-grow"
-                />
-                <input
-                  type="text"
-                  name="part2"
-                  value={phoneNumber.part2}
-                  onChange={handlePhoneChange}
-                  className="border p-2 flex-grow"
-                />
-              </div>
-            </div>
+            <PhoneNumberInput
+              phoneNumber={formData.phoneNumber}
+              onChange={handleChange}
+            />
 
-            <div className="flex items-center">
-              <p className="w-28">SMS 수신여부</p>
-              <input
-                type="checkbox"
-                id="smsConsent"
-                checked={smsConsent}
-                onChange={() => setSmsConsent(!smsConsent)}
-                className="h-4 w-4 text-blue-600 border-gray-300 rounded"
-              />
-              <label htmlFor="smsConsent" className="">
-                동의함
-              </label>
-              <span className="text-xs ml-2">
-                쇼핑몰에서 제공하는 유익한 이벤트 소식을 SMS로 받으실 수
-                있습니다.
-              </span>
-            </div>
+            <CheckboxField
+              label="SMS 수신여부"
+              name="smsConsent"
+              checked={formData.smsConsent}
+              onChange={handleCheckboxChange}
+              description="쇼핑몰에서 제공하는 유익한 이벤트 소식을 SMS로 받으실 수 있습니다."
+            />
+            <CheckboxField
+              label="이메일 수신여부"
+              name="emailConsent"
+              checked={formData.emailConsent}
+              onChange={handleCheckboxChange}
+              description="쇼핑몰에서 제공하는 유익한 이벤트 소식을 이메일로 받으실 수 있습니다."
+            />
 
-            <div className="flex items-center">
-              <p className="w-28">이메일 수신여부</p>
-              <input
-                type="checkbox"
-                id="emailConsent"
-                checked={emailConsent}
-                onChange={() => setEmailConsent(!emailConsent)}
-                className="h-4 w-4 text-blue-600 border-gray-300 rounded"
-              />
-              <label htmlFor="emailConsent" className="">
-                동의함
-              </label>
-              <span className="text-xs ml-2">
-                쇼핑몰에서 제공하는 유익한 이벤트 소식을 이메일로 받으실 수
-                있습니다.
-              </span>
-            </div>
-
-            <div className="flex flex-col gap-5">
-              <label className="">이용약관 동의</label>
-              <textarea
-                readOnly
-                className="w-full h-32 border p-2 mt-1 text-xs resize-none"
-                value={`
-                제1조(목적)
+            <div className="flex flex-col gap-2">
+              <TextareaField
+                label="이용약관 동의"
+                value={`제1조(목적)
                 이 약관은 이시영(전자상거래 사업자)이 운영하는 러브이즈트루(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 
                 이용함에 있어 사이버 몰과 이용자의 권리.의무 및 책임사항을 규정함을 목적으로 합니다.
                 ※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다. 
-
+  
                 제2조(정의)
                 ① “몰”이란 러브이즈트루가 재화 또는 용역(이하 “재화 등”이라 함)을 이용자에게 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여 
                 재화 등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 사이버몰을 운영하는 사업자의 의미로도 사용합니다.
@@ -337,30 +312,18 @@ function Join() {
                 
                 부 칙(시행일) 이 약관은 2019년 05월 31일부터 시행합니다. 부 칙(시행일) 이 약관은 2019년 05월 31일부터 시행합니다.`}
               />
-              <div className="flex items-center ">
-                <input
-                  type="checkbox"
-                  id="termsAccepted"
-                  checked={termsAccepted}
-                  onChange={() => setTermsAccepted(!termsAccepted)}
-                  className="h-4 w-4 text-blue-600 border-gray-300 rounded"
-                />
-                <label
-                  htmlFor="termsAccepted"
-                  className="ml-2 block text-sm text-gray-900"
-                >
-                  이용약관에 동의하십니까? (동의함)
-                </label>
-              </div>
+              <CheckboxField
+                label="이용약관에 동의하십니까?"
+                name="termsAccepted"
+                checked={formData.termsAccepted}
+                onChange={handleCheckboxChange}
+              />
             </div>
-
-            <div className="flex flex-col gap-5">
-              <label className="">개인정보 수집 및 이용 동의</label>
-              <textarea
-                readOnly
-                className="w-full h-32 border p-2 mt-1 text-xs resize-none"
+            <div className="flex flex-col gap-2">
+              <TextareaField
+                label="개인정보 수집 및 이용 동의"
                 value={` ** 본 양식은 쇼핑몰 운영에 도움을 드리고자 샘플로 제공되는 서식으로 쇼핑몰 운영형태에 따른 수정이 필요합니다. 쇼핑몰에 적용하시기 전, 쇼핑몰 운영 사항 등을 확인하시고 적절한 내용을 반영하여 사용하시기 바랍니다. **
-
+  
                 1. 개인정보 수집목적 및 이용목적
                 
                 가. 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산
@@ -409,21 +372,12 @@ function Join() {
                 
                 ※ 동의를 거부할 수 있으나 거부시 회원 가입이 불가능합니다.`}
               />
-              <div className="flex items-center mt-2">
-                <input
-                  type="checkbox"
-                  id="privacyAccepted"
-                  checked={privacyAccepted}
-                  onChange={() => setPrivacyAccepted(!privacyAccepted)}
-                  className="h-4 w-4 text-blue-600 border-gray-300 rounded"
-                />
-                <label
-                  htmlFor="privacyAccepted"
-                  className="ml-2 block text-sm text-gray-900"
-                >
-                  개인정보 수집 및 이용에 동의하십니까? (동의함)
-                </label>
-              </div>
+              <CheckboxField
+                label="개인정보 수집 및 이용에 동의하십니까?"
+                name="privacyAccepted"
+                checked={formData.privacyAccepted}
+                onChange={handleCheckboxChange}
+              />
             </div>
           </div>
         </form>
