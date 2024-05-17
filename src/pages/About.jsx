@@ -4,7 +4,7 @@ function About() {
   return (
     <>
       <section className="max-w-[90%] h-full m-auto pb-28">
-        <img src={logo} alt="러브이즈트루" className="w-full" />
+        <img src={logo} alt="러브이즈트루" className="h-[80vh] m-auto" />
 
         <div className="flex flex-col items-center text-center gap-10 text-sm">
           <p>

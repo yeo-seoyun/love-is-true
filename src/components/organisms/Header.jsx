@@ -33,12 +33,6 @@ function Header() {
         </div>
         <div className="flex flex-col items-end">
           <Link
-            to="/"
-            className="hover:text-black hover:line-through transition-all"
-          >
-            Community
-          </Link>
-          <Link
             to="/login"
             className="hover:text-black hover:line-through transition-all"
           >
@@ -49,6 +43,12 @@ function Header() {
             className="hover:text-black hover:line-through transition-all"
           >
             My Page
+          </Link>
+          <Link
+            to="/"
+            className="hover:text-black hover:line-through transition-all"
+          >
+            Community
           </Link>
         </div>
       </nav>
