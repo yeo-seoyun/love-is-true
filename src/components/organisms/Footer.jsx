@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <footer className="w-full h-[20vh] flex">
+      <footer className="w-full h-[30vh] flex">
         <div className="flex flex-col items-center gap-6 m-auto text-xs custom-gray">
           <ul className="text-center space-y-1">
             <li>

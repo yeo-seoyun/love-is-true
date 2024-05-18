@@ -21,7 +21,7 @@ function Layout() {
           <main>
             <Outlet />
           </main>
-          <GoToTop />
+          {location.pathname !== "/" && <GoToTop />}
           <Footer />
         </div>
       </Provider>

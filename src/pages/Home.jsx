@@ -1,9 +1,25 @@
+import { SectionsContainer, Section } from "react-fullpage";
+
 function Home() {
+  const options = {
+    activeClass: "active",
+    anchors: ["One", "Two"],
+    arrowNavigation: true,
+    delay: 900,
+    navigation: true,
+    scrollBar: false,
+  };
+
   return (
-    <>
-      <section className="w-full h-screen bg-home-1 bg-no-repeat bg-cover"></section>
-      <section className="w-full h-screen bg-home-2 bg-no-repeat bg-cover"></section>
-    </>
+    <SectionsContainer {...options}>
+      <Section>
+        <div className="w-full h-screen bg-home-1 bg-no-repeat bg-cover"></div>
+      </Section>
+
+      <Section>
+        <div className="w-full h-screen bg-home-2 bg-no-repeat bg-cover"></div>
+      </Section>
+    </SectionsContainer>
   );
 }
 

@@ -10,7 +10,7 @@ function Header() {
         </Link>
       </header>
 
-      <nav className="fixed top-0 right-1 px-12 py-6 flex flex-col gap-3 hover:text-gray-500">
+      <nav className="fixed top-0 right-1 px-12 py-6 flex flex-col gap-3 hover:text-gray-500 z-50">
         <div className="flex flex-col items-end">
           <Link
             to="/about"
