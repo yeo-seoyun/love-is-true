@@ -42,7 +42,7 @@ function JoinFrom() {
   };
 
   return (
-    <form className="w-[800px] flex flex-col gap-4">
+    <form className="w-[800px] flex flex-col gap-4 md:w-[700px] sm:w-[350px]">
       <div className="w-full flex flex-col gap-8">
         <InputField
           label="아이디"

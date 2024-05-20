@@ -15,7 +15,9 @@ function CheckboxField({ name, label, checked, onChange, description }) {
       <label htmlFor={inputId} className="">
         동의함
       </label>
-      {description && <span className="text-xs ml-2">{description}</span>}
+      {description && (
+        <span className="text-xs ml-2 sm:hidden">{description}</span>
+      )}
     </div>
   );
 }

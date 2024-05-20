@@ -21,7 +21,7 @@ function Lookbook() {
 
   return (
     <>
-      <div className="max-w-[1440px] py-28 m-auto grid grid-cols-3 gap-10">
+      <div className="max-w-[1440px] py-28 m-auto grid grid-cols-3 gap-10 md:grid-cols-2 md:py-4 md:px-4 sm:grid-cols-1 sm:py-6 sm:px-4">
         {products.map((product) => (
           <LookbookCard key={product.id} product={product} />
         ))}

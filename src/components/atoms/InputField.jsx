@@ -14,7 +14,7 @@ function InputField({ label, type, name, value, onChange, placeholder, info }) {
           className="border p-2"
           placeholder={placeholder}
         />
-        {info && <span className="text-xs">{info}</span>}
+        {info && <span className="text-xs sm:hidden">{info}</span>}
       </div>
     </>
   );

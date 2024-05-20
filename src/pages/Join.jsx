@@ -4,7 +4,7 @@ import JoinFrom from "../components/molecule/JoinFrom";
 function Join() {
   return (
     <>
-      <section className="max-w-[90%] flex flex-col gap-10 items-center m-auto py-28 whitespace-nowrap  text-sm">
+      <section className="max-w-[90%] flex flex-col gap-10 items-center m-auto py-28 whitespace-nowrap text-sm md:py-16">
         <h2 className="sr-only">회원가입</h2>
         <JoinFrom />
 
