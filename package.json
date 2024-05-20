@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "@ap.cx/react-fullpage": "^0.3.0",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.1",
     "@tanstack/react-query": "^5.32.1",
+    "fontawesome": "^5.6.3",
     "fullpage.js": "^4.0.22",
     "gsap": "^3.12.5",
     "jotai": "^2.8.0",
