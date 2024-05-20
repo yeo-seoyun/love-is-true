@@ -33,7 +33,7 @@ function ProductDetail() {
 
   return (
     <div className="space-y-24">
-      <section className="w-full h-auto flex justify-between gap-9 m-auto">
+      <section className="w-full h-auto flex justify-between gap-9 m-auto sm:flex-col">
         <article className="w-full space-y-3">
           <img
             src={getPbImage(

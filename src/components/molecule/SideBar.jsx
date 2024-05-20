@@ -36,7 +36,7 @@ function SideBar({ productData }) {
   };
 
   return (
-    <article className="sticky w-[380px] h-screen top-0 flex flex-col gap-10 justify-center">
+    <article className="sticky w-[380px] h-screen top-0 flex flex-col gap-10 justify-center sm:w-[280px] sm:h-[50vh]">
       <div className="flex flex-col gap-2">
         <h2 className="text-xl">{productData.title}</h2>
         <p>{productData.price.toLocaleString()}원</p>
