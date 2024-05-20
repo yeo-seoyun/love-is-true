@@ -13,11 +13,11 @@ function Home() {
   return (
     <SectionsContainer {...options}>
       <Section>
-        <div className="w-full h-screen bg-home-1 bg-no-repeat bg-cover"></div>
+        <div className="w-full h-screen lg:bg-home-1 bg-t-home-1 bg-no-repeat bg-cover"></div>
       </Section>
 
       <Section>
-        <div className="w-full h-screen bg-home-2 bg-no-repeat bg-cover"></div>
+        <div className="w-full h-screen lg:bg-home-2 bg-t-home-2 bg-no-repeat bg-cover"></div>
       </Section>
     </SectionsContainer>
   );

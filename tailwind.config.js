@@ -25,6 +25,8 @@ export default {
       backgroundImage: {
         "home-1": "url('/assets/24aadcf80919fcb597f4698cc96a22cc.jpg')",
         "home-2": "url('/assets/2eb565a3af36071e481771430e71f00e.jpg')",
+        "t-home-1": "url('/assets/4d8059cf3f1482477931f71e09ade1c4.jpg')",
+        "t-home-2": "url('/assets/f6d4b37bccfdbab296db864dccd6ca4f.jpg')",
         naver: "url('/assets/npay_sp_payment.png')",
       },
     },
